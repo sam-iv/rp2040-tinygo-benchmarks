@@ -1,0 +1,21 @@
+# Build Artifacts
+*.uf2
+*.hex
+*.bin
+*.elf
+*.o
+
+# Vendor/Modules
+vendor/
+go.sum
+go.mod
+
+# VS Code workspace files
+.vscode/
+*.code-workspace
+
+# Temp files
+*.log
+*.tmp
+*.csv
+*.out
