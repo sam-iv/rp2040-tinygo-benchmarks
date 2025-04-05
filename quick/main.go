@@ -5,6 +5,13 @@ import (
 	"time"
 )
 
+// benchmarkQuickSort runs a benchmark for the Quick Sort algorithm.
+//
+// This function benchmarks Quick Sort on reversed arrays of sizes 10, 50, and 100,
+// simulating worst-case scenarios. The execution time is printed in CSV format.
+//
+// Output format:
+//   task,method,size,time_us
 func benchmarkQuickSort() {
 	sizes := []int{10, 50, 100}
 	println("task,method,size,time_us")
@@ -28,7 +35,7 @@ func main() {
 	machine.Serial.Configure(machine.UARTConfig{})
 	time.Sleep(time.Second * 10)
 
-	println("🔧 TinyGo Quick Sort Benchmark Starting...")
+	println("TinyGo Quick Sort Benchmark Starting...")
 	benchmarkQuickSort()
 
 	for {

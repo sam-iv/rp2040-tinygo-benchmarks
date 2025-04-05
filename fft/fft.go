@@ -2,6 +2,19 @@ package main
 
 import "math"
 
+// bitReverse reorders the input slices in bit-reversed order.
+//
+// This rearranges the elements of the input arrays in bit-reversed index order.
+// It is a common preprocessing step in radix-2 FFT implementations to prepare
+// for the Cooley-Tukey algorithm.
+//
+// Parameters:
+//   - real: slice containing the real part of the input signal.
+//   - imag: slice containing the imaginary part of the input signal.
+//
+// Notes:
+//   - Both slices must have the same length.
+//   - The data is modified in place.
 func bitReverse(real, imag []float32) {
 	n := len(real)
 	j := 0
@@ -19,6 +32,19 @@ func bitReverse(real, imag []float32) {
 	}
 }
 
+// fftRadix2 computes the radix-2 FFT on real and imaginary input slices.
+//
+// This function implements the Cooley-Tukey radix-2 decimation-in-time FFT
+// algorithm. It expects the input to be prearranged in bit-reversed order,
+// and performs the in-place computation of the FFT result.
+//
+// Parameters:
+//   - real: slice of real input samples.
+//   - imag: slice of imaginary input samples (typically all zeroes).
+//
+// Notes:
+//   - The input size must be a power of 2.
+//   - The FFT is computed in place and overwrites the original input.
 func fftRadix2(real, imag []float32) {
 	n := len(real)
 	bitReverse(real, imag)

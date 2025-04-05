@@ -5,6 +5,9 @@ import (
 	"time"
 )
 
+// createMatrix creates a square matrix of size n x n filled using a provided function.
+//
+// The fill function is called with the row and column indices for each cell.
 func createMatrix(n int, fill func(i, j int) int) [][]int {
 	mat := make([][]int, n)
 	for i := range mat {
@@ -16,6 +19,14 @@ func createMatrix(n int, fill func(i, j int) int) [][]int {
 	return mat
 }
 
+// benchmarkMatrixMult runs a benchmark for matrix multiplication using 2D slices.
+//
+// This benchmark multiplies square matrices of size 10 and 20 using a basic
+// triple-nested loop approach. Matrix A is filled with i+j and matrix B with i−j.
+// The result is stored in matrix C, and the execution time is printed in CSV format.
+//
+// Output format:
+//   task,method,size,time_us
 func benchmarkMatrixMult() {
 	sizes := []int{10, 20}
 	println("task,method,size,time_us")
@@ -33,11 +44,12 @@ func benchmarkMatrixMult() {
 	}
 }
 
+
 func main() {
 	machine.Serial.Configure(machine.UARTConfig{})
 	time.Sleep(time.Second * 10)
 
-	println("🔧 TinyGo Matrix Mult Benchmark Starting...")
+	println("TinyGo Matrix Multiplication Benchmark Starting...")
 	benchmarkMatrixMult()
 
 	for {
