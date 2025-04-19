@@ -1,13 +1,15 @@
 package main
 
-// BubbleSort sorts a slice of integers in ascending order using
-// the Bubble Sort algorithm.
+// BubbleSort performs an in-place Bubble Sort on an integer slice.
 //
-// This function repeatedly steps through the list, compares adjacent elements,
-// and swaps them if they are in the wrong order. The pass through the list
-// is repeated until the list is sorted.
+// Sorts a slice using the classic Bubble Sort algorithm,
+// which repeatedly compares and swaps adjacent elements until the
+// slice is fully ordered.
 //
-// Time complexity: O(n²) in worst case.
+// Arrays are expected to be pre-filled before calling this function.
+// This is a worst-case simulation when the input is reverse-ordered.
+//
+// Time complexity: O(n²) in the worst case.
 //
 // Parameters:
 //   - arr: slice of integers to be sorted
