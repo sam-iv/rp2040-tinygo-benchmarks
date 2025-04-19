@@ -1,9 +1,5 @@
 # Build Artifacts
-*.uf2
-*.hex
-*.bin
-*.elf
-*.o
+build/
 
 # Vendor/Modules
 vendor/
@@ -17,5 +13,3 @@ go.mod
 # Temp files
 *.log
 *.tmp
-*.csv
-*.out
