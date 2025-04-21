@@ -1,0 +1,6 @@
+task,method,reads,avg_time_us
+adc,sample, 0 , 46800
+adc,sample, 250 , 47008
+adc,sample, 500 , 46976
+adc,sample, 750 , 47440
+adc,single_read, 1000 , 6

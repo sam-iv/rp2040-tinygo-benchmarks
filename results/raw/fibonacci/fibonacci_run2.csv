@@ -1,0 +1,9 @@
+task,method,n,result,time_us
+fibonacci,iterative, 10 , 55 , 25
+fibonacci,recursive, 10 , 55 , 20
+fibonacci,iterative, 20 , 6765 , 5
+fibonacci,recursive, 20 , 6765 , 1544
+fibonacci,iterative, 30 , 832040 , 5
+fibonacci,recursive, 30 , 832040 , 188488
+fibonacci,iterative, 35 , 9227465 , 5
+fibonacci,recursive, 35 , 9227465 , 2090262

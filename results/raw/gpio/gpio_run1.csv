@@ -1,0 +1,2 @@
+task,method,toggles,total_time_us,avg_us
+gpio,toggle, 1000 , 62 , +6.200000e-002

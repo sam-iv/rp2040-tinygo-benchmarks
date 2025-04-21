@@ -32,20 +32,10 @@ This repository contains the full TinyGo implementation of software and hardware
 
 ```
 tinygo_benchmarks/
-├── adc/
-├── bubblesort/
-├── fft/
-├── gpio/
-├── i2c/
-├── interrupt/
-├── loop/
-├── matrix/
-├── pwm/
-├── quicksort/
-├── uart/
-├── build/           # Compiled UF2 binaries
-├── results/         # Raw & summary CSV logs
-├── build.bat        # Optional Windows builder
+├── src/              # All benchmark folders live here (e.g., adc, fft, quicksort...)
+├── build/            # Compiled UF2 binaries
+├── results/          # Raw & summary CSV logs
+├── build.bat         # Optional Windows builder script
 ```
 
 ## Build and Run Instructions
@@ -66,13 +56,13 @@ Choose a benchmark by number and it will compile that folder to `build/<name>.uf
 Use the TinyGo CLI:
 
 ```
-tinygo build -target pico -o build/<benchmark>.uf2 <folder>
+tinygo build -target pico -o build/<benchmark>.uf2 ./src/<benchmark>
 ```
 
 For example:
 
 ```
-tinygo build -target pico -o build/fft.uf2 fft
+tinygo build -target pico -o build/fft.uf2 ./src/fft
 ```
 
 ### Flash to Pico
@@ -82,11 +72,10 @@ Drag and drop the `.uf2` file into the Pico while it is in USB mass storage mode
 Alternatively, you can use TinyGo’s built-in flash command to compile and upload in one step:
 
 ```bash
-tinygo flash -target pico ./fft
+tinygo flash -target pico ./src/fft
 ```
 
 > This works when your Pico is in BOOTSEL mode and mounted as a USB device. TinyGo will automatically build and flash the binary to your board.
-
 
 ## Output Format
 
@@ -137,6 +126,24 @@ To isolate each benchmark:
 3. Select the relevant benchmark by number
 4. Flash the resulting `.uf2` to your Pico
 5. Use a serial monitor to capture and save the output
+
+### Memory and Code Size Analysis
+
+Each TinyGo `.elf` binary was analyzed using the following LLVM tools:
+
+```bash
+llvm-size -A build/<benchmark>.elf    > results/memory/<benchmark>.txt
+
+llvm-nm -S build/<benchmark>.elf      > results/memory/<benchmark>.map
+
+llvm-objdump -d build/<benchmark>.elf > results/memory/<benchmark>.disasm.S
+```
+
+These files were used to evaluate:
+- Code size
+- RAM usage
+- Symbol layout
+- Static disassembly for complexity inspection
 
 ## Dependencies
 

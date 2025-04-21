@@ -1,0 +1,4 @@
+task,method,size,time_us
+bubblesort,bubble, 10 , 32
+bubblesort,bubble, 50 , 156
+bubblesort,bubble, 100 , 617

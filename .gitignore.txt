@@ -1,4 +1,6 @@
 # Build Artifacts
+build/
+*.uf2
 
 # Vendor/Modules
 vendor/

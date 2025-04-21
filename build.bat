@@ -24,8 +24,8 @@ set /p benchChoice="Enter number of benchmark to build: "
 
 set "src="
 if "%benchChoice%"=="1" set src=fibonacci
-if "%benchChoice%"=="2" set src=bubblesort
-if "%benchChoice%"=="3" set src=quicksort
+if "%benchChoice%"=="2" set src=bubble
+if "%benchChoice%"=="3" set src=quick
 if "%benchChoice%"=="4" set src=loop
 if "%benchChoice%"=="5" set src=matrix
 if "%benchChoice%"=="6" set src=fft
@@ -46,7 +46,7 @@ echo Building TinyGo benchmark: %src%
 echo ----------------------------
 
 mkdir build 2>nul
-tinygo build -target pico -o build\%src%.uf2 .\%src%
+tinygo build -target pico -o build\%src%.uf2 .\src\%src%
 
 if exist build\%src%.uf2 (
     echo Build successful! File saved to build\%src%.uf2

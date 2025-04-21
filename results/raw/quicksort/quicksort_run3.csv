@@ -1,0 +1,4 @@
+task,method,size,time_us
+quicksort,quick, 10 , 42
+quicksort,quick, 50 , 181
+quicksort,quick, 100 , 686

@@ -1,0 +1,11 @@
+task,method,latency_us
+interrupt,triggered, 694
+interrupt,triggered, 350
+interrupt,triggered, 949
+interrupt,triggered, 46
+interrupt,triggered, 269
+interrupt,triggered, 411
+interrupt,triggered, 181
+interrupt,triggered, 488
+interrupt,triggered, 107
+interrupt,triggered, 578
