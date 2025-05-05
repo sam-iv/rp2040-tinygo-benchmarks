@@ -11,7 +11,7 @@ import (
 // a PWM signal on a designated GPIO pin using the RP2040's hardware PWM peripheral.
 //
 // Wiring:
-//   - GPIO15 (pin 20) → Positive terminal of buzzer or probe input
+//   - GPIO15 (pin 20) → Positive terminal of buzzer and/or probe input
 //   - Buzzer GND → Common GND rail
 //
 // It does not measure waveform timing accuracy, but rather the latency of setup

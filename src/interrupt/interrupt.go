@@ -39,9 +39,10 @@ func handleInterrupt(pin machine.Pin) {
  *
  * Wiring:
  *   - GPIO14 (pin 19) → One leg of button
- *   - Other button leg → GND (pull-down enabled)
- *   - GPIO15 (pin 20) → Positive terminal of buzzer
- *   - Buzzer GND → Common ground
+ *   - Other button leg → 3.3v (pin 36)
+ *   - GPIO14 (pin 19) → GND rail (pulled down)
+ *   - GPIO15 (pin 20) → Positive terminal of buzzer (active high)
+ *   - Buzzer GND → Common GND rail
  *
  * Output format:
  *   task,method,latency_us
