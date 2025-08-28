@@ -138,6 +138,7 @@ llvm-nm -S build/<benchmark>.elf      > results/memory/<benchmark>.map
 
 llvm-objdump -d build/<benchmark>.elf > results/memory/<benchmark>.disasm.S
 ```
+**Note:** The Memory folder has been removed
 
 These files were used to evaluate:
 - Code size
